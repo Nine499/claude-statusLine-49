@@ -1,0 +1,29 @@
+[project]
+name = "claude-statusline-49"
+version = "20261117.1415.3279"
+description = "Claude Code 三行状态栏：模型、工作区、请求速度"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+claude-statusLine-49 = "claude_statusline.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/claude_statusline"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
