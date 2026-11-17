@@ -4,7 +4,7 @@ requires-python = ">=3.11"
 
 [[package]]
 name = "claude-statusline-49"
-version = "20261117.1415.3279"
+version = "20261117.1926.705"
 source = { editable = "." }
 
 [package.dev-dependencies]

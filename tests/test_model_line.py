@@ -1,4 +1,5 @@
 from claude_statusline.model_line import (
+    cache_segment,
     context_segment,
     format_token_count,
     model_line,
@@ -6,17 +7,28 @@ from claude_statusline.model_line import (
 )
 
 
-def test_model_line_renders_model_and_window():
+def test_model_line_renders_model_window_and_cache():
     data = {
         "model": {"id": "claude-fable-5-2"},
         "effort": {"level": "high"},
         "context_window": {"context_window_size": 200_000, "used_percentage": 42},
+        "prompt_cache": {"hit_ratio": 0.5},
     }
-    assert model_line(data) == "model: claude-fable-5-2(high) | window[200K]: 42%"
+    assert (
+        model_line(data)
+        == "model: claude-fable-5-2(high) | window[200K]: 42% | cache: 50%"
+    )
 
 
 def test_model_line_uses_placeholders_for_missing_fields():
-    assert model_line({}) == "model: unknown(-) | window[0]: 0%"
+    assert model_line({}) == "model: unknown(-) | window[0]: 0% | cache: 0%"
+
+
+def test_cache_segment_accepts_fraction_percent_and_junk():
+    assert cache_segment({"prompt_cache": {"hit_ratio": 0.42}}) == "cache: 42%"
+    assert cache_segment({"prompt_cache": {"hit_ratio": 42}}) == "cache: 42%"
+    assert cache_segment({"prompt_cache": {"hit_ratio": "x"}}) == "cache: 0%"
+    assert cache_segment({}) == "cache: 0%"
 
 
 def test_token_count_formats_thousands_and_millions():

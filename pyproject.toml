@@ -1,7 +1,7 @@
 [project]
 name = "claude-statusline-49"
-version = "20261117.1415.3279"
-description = "Claude Code 三行状态栏：模型、工作区、请求速度"
+version = "20261117.1926.0705"
+description = "Claude Code 两行状态栏：模型、工作区、缓存命中"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []

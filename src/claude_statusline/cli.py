@@ -1,10 +1,9 @@
-"""程序入口：读 stdin 的 JSON，向 stdout 打印三行状态栏。"""
+"""程序入口：读 stdin 的 JSON，向 stdout 打印两行状态栏。"""
 
 import json
 import sys
 
 from .model_line import model_line
-from .speed_line import speed_line
 from .workspace_line import workspace_line
 
 
@@ -18,7 +17,7 @@ def read_input() -> dict:
 
 
 def render(data: dict) -> str:
-    lines = (model_line(data), workspace_line(data), speed_line(data))
+    lines = (model_line(data), workspace_line(data))
     return "\n".join(line for line in lines if line)
 
 

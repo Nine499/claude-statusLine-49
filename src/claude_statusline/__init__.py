@@ -1,1 +1,1 @@
-"""Claude Code 三行状态栏。"""
+"""Claude Code 两行状态栏。"""
