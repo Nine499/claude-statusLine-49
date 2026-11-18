@@ -1,6 +1,6 @@
 [project]
 name = "claude-statusline-49"
-version = "20261117.1926.0705"
+version = "20261118.1935.2223"
 description = "Claude Code 两行状态栏：模型、工作区、缓存命中"
 readme = "README.md"
 requires-python = ">=3.11"

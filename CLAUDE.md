@@ -4,6 +4,8 @@
 
 Claude Code 两行状态栏：读 stdin 的 JSON，向 stdout 输出两行文本。可执行名 `claude-statusLine-49`，运行时零第三方依赖。
 
+Agent 文档见 `AGENTS.md`。
+
 ## 代码结构
 
 - `src/claude_statusline/cli.py`：入口，读 stdin、组装两行、打印
@@ -37,3 +39,4 @@ Claude Code 两行状态栏：读 stdin 的 JSON，向 stdout 输出两行文本
 | --- | --- | --- |
 | 20261117.1415.3279 | 2026-11-17 14:15 | 重写为多文件项目，加入 tests 与 README，改用时间版本号 |
 | 20261117.1926.0705 | 2026-11-17 19:26 | 精简为两行：cache 并入第一行，删除第三行及 TTFT/TPOT/TPS、transcript 代码 |
+| 20261118.1935.2223 | 2026-11-18 19:35 | 重写 README，新增 AGENTS.md，CLAUDE.md 增加 Agent 文档指引 |
